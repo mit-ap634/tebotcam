@@ -1,0 +1,1449 @@
+{
+	"info": {
+		"_postman_id": "1652fcb2-852a-4d3e-8255-e7d308201910",
+		"name": "Airports",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5027697",
+		"_collection_link": "https://tebotcam-2023.postman.co/workspace/tebotcam-2023~8b17d6dd-6e4c-4cbb-802f-b16ebe9ae60b/collection/5027697-1652fcb2-852a-4d3e-8255-e7d308201910?action=share&source=collection_link&creator=5027697"
+	},
+	"item": [
+		{
+			"name": "Airports-Token",
+			"item": [
+				{
+					"name": "Token",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let jsonData = pm.response.json();\r",
+									"postman.setEnvironmentVariable(\"token\", jsonData.token);\r",
+									"\r",
+									"pm.test(\"Token is Generated\", function () {\r",
+									"    pm.expect(jsonData.token).is.exist;\r",
+									"    pm.expect(jsonData.token).is.not.empty;\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://airportgap.dev-tester.com/api/tokens?email=naruto@mailinator.com&password=shuriken",
+							"protocol": "https",
+							"host": [
+								"airportgap",
+								"dev-tester",
+								"com"
+							],
+							"path": [
+								"api",
+								"tokens"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "naruto@mailinator.com"
+								},
+								{
+									"key": "password",
+									"value": "shuriken"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Token",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "https://airportgap.dev-tester.com/api/tokens?email=naruto@mailinator.com&password=shuriken",
+									"protocol": "https",
+									"host": [
+										"airportgap",
+										"dev-tester",
+										"com"
+									],
+									"path": [
+										"api",
+										"tokens"
+									],
+									"query": [
+										{
+											"key": "email",
+											"value": "naruto@mailinator.com"
+										},
+										{
+											"key": "password",
+											"value": "shuriken"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 03 Oct 2023 03:12:08 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "36"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "x-frame-options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "0"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "x-download-options",
+									"value": "noopen"
+								},
+								{
+									"key": "x-permitted-cross-domain-policies",
+									"value": "none"
+								},
+								{
+									"key": "referrer-policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"9e16ef2e900fdaac812631533f0dd2c2\""
+								},
+								{
+									"key": "Cache-Control",
+									"value": "max-age=0, private, must-revalidate"
+								},
+								{
+									"key": "x-request-id",
+									"value": "c8d2290a-f7f2-4105-b40b-5e7b8c0434cb"
+								},
+								{
+									"key": "x-runtime",
+									"value": "0.292754"
+								},
+								{
+									"key": "vary",
+									"value": "Accept, Origin"
+								},
+								{
+									"key": "strict-transport-security",
+									"value": "max-age=15724800; includeSubdomains"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Report-To",
+									"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=fKkjlyfLORjaWx4vfateYtlNMRBP7VKoRyiORtMZmFs4o4euhaJGMso9XMbicrE5lMErTtjLcIkB2WjcGYdobej4CqZYjohMRSkQTPGiDiIH6Eiar0z9F16VuLZXuwyYGqR0YVQeLHTJeyCx\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "NEL",
+									"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "CF-RAY",
+									"value": "81020072c92a3f94-SIN"
+								},
+								{
+									"key": "alt-svc",
+									"value": "h3=\":443\"; ma=86400"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"token\": \"Kfj1U67PyQgfWtCY7ramVMrB\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Airports-Info",
+			"item": [
+				{
+					"name": "Airports",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let jsonData = pm.response.json();\r",
+									"let dataLength = pm.response.json().data;\r",
+									"\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Has Body\", function () {\r",
+									"    pm.response.to.have.body();\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Show All Airports\", function () {\r",
+									"    pm.expect(dataLength.length).to.equal(30);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://airportgap.dev-tester.com/api/airports",
+							"protocol": "https",
+							"host": [
+								"airportgap",
+								"dev-tester",
+								"com"
+							],
+							"path": [
+								"api",
+								"airports"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Airports",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://airportgap.dev-tester.com/api/airports",
+									"protocol": "https",
+									"host": [
+										"airportgap",
+										"dev-tester",
+										"com"
+									],
+									"path": [
+										"api",
+										"airports"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 03 Oct 2023 03:14:08 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "vary",
+									"value": "Accept, Origin"
+								},
+								{
+									"key": "x-frame-options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "0"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "x-download-options",
+									"value": "noopen"
+								},
+								{
+									"key": "x-permitted-cross-domain-policies",
+									"value": "none"
+								},
+								{
+									"key": "referrer-policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"37f4286d3dd3278024683e8b0b63f0fa\""
+								},
+								{
+									"key": "Cache-Control",
+									"value": "max-age=0, private, must-revalidate"
+								},
+								{
+									"key": "x-request-id",
+									"value": "3c4f9a13-8538-424c-b089-2116b6e9a149"
+								},
+								{
+									"key": "x-runtime",
+									"value": "0.013577"
+								},
+								{
+									"key": "strict-transport-security",
+									"value": "max-age=15724800; includeSubdomains"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Report-To",
+									"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=74aute8FVvknDExGpb9la83T6LXBJ4n8a9QySkHkXgmt%2FEIosKmndK5R9KbQCRGzvoA8KFP1N43uBTawWRaHDZUVCvwgdrkFf5c1yFtPpx1E8EcJEF7E%2Bu4kholGwZpXp78wzuasx8DRtQ0D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "NEL",
+									"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "CF-RAY",
+									"value": "8102035f4a613f94-SIN"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								},
+								{
+									"key": "alt-svc",
+									"value": "h3=\":443\"; ma=86400"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": \"GKA\",\n            \"type\": \"airport\",\n            \"attributes\": {\n                \"name\": \"Goroka Airport\",\n                \"city\": \"Goroka\",\n                \"country\": \"Papua New Guinea\",\n                \"iata\": \"GKA\",\n                \"icao\": \"AYGA\",\n                \"latitude\": \"-6.08169\",\n                \"longitude\": \"145.391998\",\n                \"altitude\": 5282,\n                \"timezone\": \"Pacific/Port_Moresby\"\n            }\n        },\n        {\n            \"id\": \"MAG\",\n            \"type\": \"airport\",\n            \"attributes\": {\n                \"name\": \"Madang Airport\",\n                \"city\": \"Madang\",\n                \"country\": \"Papua New Guinea\",\n                \"iata\": \"MAG\",\n                \"icao\": \"AYMD\",\n                \"latitude\": \"-5.20708\",\n                \"longitude\": \"145.789001\",\n                \"altitude\": 20,\n                \"timezone\": \"Pacific/Port_Moresby\"\n            }\n        },\n        {\n            \"id\": \"HGU\",\n            \"type\": \"airport\",\n            \"attributes\": {\n                \"name\": \"Mount Hagen Kagamuga Airport\",\n                \"city\": \"Mount Hagen\",\n                \"country\": \"Papua New Guinea\",\n                \"iata\": \"HGU\",\n                \"icao\": \"AYMH\",\n                \"latitude\": \"-5.82679\",\n                \"longitude\": \"144.296005\",\n                \"altitude\": 5388,\n                \"timezone\": \"Pacific/Port_Moresby\"\n            }\n        },\n        {\n            \"id\": \"LAE\",\n            \"type\": \"airport\",\n            \"attributes\": {\n                \"name\": \"Nadzab Airport\",\n                \"city\": \"Nadzab\",\n                \"country\": \"Papua New Guinea\",\n                \"iata\": \"LAE\",\n                \"icao\": \"AYNZ\",\n                \"latitude\": \"-6.569803\",\n                \"longitude\": \"146.725977\",\n                \"altitude\": 239,\n                \"timezone\": \"Pacific/Port_Moresby\"\n            }\n        },\n        {\n            \"id\": \"POM\",\n            \"type\": \"airport\",\n            \"attributes\": {\n                \"name\": \"Port Moresby Jacksons International Airport\",\n                \"city\": \"Port Moresby\",\n                \"country\": \"Papua New Guinea\",\n                \"iata\": \"POM\",\n                \"icao\": \"AYPY\",\n                \"latitude\": \"-9.44338\",\n                \"longitude\": \"147.220001\",\n                \"altitude\": 146,\n                \"timezone\": \"Pacific/Port_Moresby\"\n            }\n        },\n        {\n            \"id\": \"WWK\",\n            \"type\": \"airport\",\n            \"attributes\": {\n                \"name\": \"Wewak International Airport\",\n                \"city\": \"Wewak\",\n                \"country\": \"Papua New Guinea\",\n                \"iata\": \"WWK\",\n                \"icao\": \"AYWK\",\n                \"latitude\": \"-3.58383\",\n                \"longitude\": \"143.669006\",\n                \"altitude\": 19,\n                \"timezone\": \"Pacific/Port_Moresby\"\n            }\n        },\n        {\n            \"id\": \"UAK\",\n            \"type\": \"airport\",\n            \"attributes\": {\n                \"name\": \"Narsarsuaq Airport\",\n                \"city\": \"Narssarssuaq\",\n                \"country\": \"Greenland\",\n                \"iata\": \"UAK\",\n                \"icao\": \"BGBW\",\n                \"latitude\": \"61.1605\",\n                \"longitude\": \"-45.425999\",\n                \"altitude\": 112,\n                \"timezone\": \"America/Godthab\"\n            }\n        },\n        {\n            \"id\": \"GOH\",\n            \"type\": \"airport\",\n            \"attributes\": {\n                \"name\": \"Godthaab / Nuuk Airport\",\n                \"city\": \"Godthaab\",\n                \"country\": \"Greenland\",\n                \"iata\": \"GOH\",\n                \"icao\": \"BGGH\",\n                \"latitude\": \"64.190903\",\n                \"longitude\": \"-51.678101\",\n                \"altitude\": 283,\n                \"timezone\": \"America/Godthab\"\n            }\n        },\n        {\n            \"id\": \"SFJ\",\n            \"type\": \"airport\",\n            \"attributes\": {\n                \"name\": \"Kangerlussuaq Airport\",\n                \"city\": \"Sondrestrom\",\n                \"country\": \"Greenland\",\n                \"iata\": \"SFJ\",\n                \"icao\": \"BGSF\",\n                \"latitude\": \"67.012222\",\n                \"longitude\": \"-50.711603\",\n                \"altitude\": 165,\n                \"timezone\": \"America/Godthab\"\n            }\n        },\n        {\n            \"id\": \"THU\",\n            \"type\": \"airport\",\n            \"attributes\": {\n                \"name\": \"Thule Air Base\",\n                \"city\": \"Thule\",\n                \"country\": \"Greenland\",\n                \"iata\": \"THU\",\n                \"icao\": \"BGTL\",\n                \"latitude\": \"76.531197\",\n                \"longitude\": \"-68.703201\",\n                \"altitude\": 251,\n                \"timezone\": \"America/Thule\"\n            }\n        },\n        {\n            \"id\": \"AEY\",\n            \"type\": \"airport\",\n            \"attributes\": {\n                \"name\": \"Akureyri Airport\",\n                \"city\": \"Akureyri\",\n                \"country\": \"Iceland\",\n                \"iata\": \"AEY\",\n                \"icao\": \"BIAR\",\n                \"latitude\": \"65.660004\",\n                \"longitude\": \"-18.072701\",\n                \"altitude\": 6,\n                \"timezone\": \"Atlantic/Reykjavik\"\n            }\n        },\n        {\n            \"id\": \"EGS\",\n            \"type\": \"airport\",\n            \"attributes\": {\n                \"name\": \"Egilsstaðir Airport\",\n                \"city\": \"Egilsstadir\",\n                \"country\": \"Iceland\",\n                \"iata\": \"EGS\",\n                \"icao\": \"BIEG\",\n                \"latitude\": \"65.283302\",\n                \"longitude\": \"-14.4014\",\n                \"altitude\": 76,\n                \"timezone\": \"Atlantic/Reykjavik\"\n            }\n        },\n        {\n            \"id\": \"HFN\",\n            \"type\": \"airport\",\n            \"attributes\": {\n                \"name\": \"Hornafjörður Airport\",\n                \"city\": \"Hofn\",\n                \"country\": \"Iceland\",\n                \"iata\": \"HFN\",\n                \"icao\": \"BIHN\",\n                \"latitude\": \"64.295601\",\n                \"longitude\": \"-15.2272\",\n                \"altitude\": 24,\n                \"timezone\": \"Atlantic/Reykjavik\"\n            }\n        },\n        {\n            \"id\": \"HZK\",\n            \"type\": \"airport\",\n            \"attributes\": {\n                \"name\": \"Húsavík Airport\",\n                \"city\": \"Husavik\",\n                \"country\": \"Iceland\",\n                \"iata\": \"HZK\",\n                \"icao\": \"BIHU\",\n                \"latitude\": \"65.952301\",\n                \"longitude\": \"-17.426001\",\n                \"altitude\": 48,\n                \"timezone\": \"Atlantic/Reykjavik\"\n            }\n        },\n        {\n            \"id\": \"IFJ\",\n            \"type\": \"airport\",\n            \"attributes\": {\n                \"name\": \"Ísafjörður Airport\",\n                \"city\": \"Isafjordur\",\n                \"country\": \"Iceland\",\n                \"iata\": \"IFJ\",\n                \"icao\": \"BIIS\",\n                \"latitude\": \"66.058098\",\n                \"longitude\": \"-23.1353\",\n                \"altitude\": 8,\n                \"timezone\": \"Atlantic/Reykjavik\"\n            }\n        },\n        {\n            \"id\": \"KEF\",\n            \"type\": \"airport\",\n            \"attributes\": {\n                \"name\": \"Keflavik International Airport\",\n                \"city\": \"Keflavik\",\n                \"country\": \"Iceland\",\n                \"iata\": \"KEF\",\n                \"icao\": \"BIKF\",\n                \"latitude\": \"63.985001\",\n                \"longitude\": \"-22.6056\",\n                \"altitude\": 171,\n                \"timezone\": \"Atlantic/Reykjavik\"\n            }\n        },\n        {\n            \"id\": \"PFJ\",\n            \"type\": \"airport\",\n            \"attributes\": {\n                \"name\": \"Patreksfjörður Airport\",\n                \"city\": \"Patreksfjordur\",\n                \"country\": \"Iceland\",\n                \"iata\": \"PFJ\",\n                \"icao\": \"BIPA\",\n                \"latitude\": \"65.555801\",\n                \"longitude\": \"-23.965\",\n                \"altitude\": 11,\n                \"timezone\": \"Atlantic/Reykjavik\"\n            }\n        },\n        {\n            \"id\": \"RKV\",\n            \"type\": \"airport\",\n            \"attributes\": {\n                \"name\": \"Reykjavik Airport\",\n                \"city\": \"Reykjavik\",\n                \"country\": \"Iceland\",\n                \"iata\": \"RKV\",\n                \"icao\": \"BIRK\",\n                \"latitude\": \"64.129997\",\n                \"longitude\": \"-21.940599\",\n                \"altitude\": 48,\n                \"timezone\": \"Atlantic/Reykjavik\"\n            }\n        },\n        {\n            \"id\": \"SIJ\",\n            \"type\": \"airport\",\n            \"attributes\": {\n                \"name\": \"Siglufjörður Airport\",\n                \"city\": \"Siglufjordur\",\n                \"country\": \"Iceland\",\n                \"iata\": \"SIJ\",\n                \"icao\": \"BISI\",\n                \"latitude\": \"66.133301\",\n                \"longitude\": \"-18.9167\",\n                \"altitude\": 10,\n                \"timezone\": \"Atlantic/Reykjavik\"\n            }\n        },\n        {\n            \"id\": \"VEY\",\n            \"type\": \"airport\",\n            \"attributes\": {\n                \"name\": \"Vestmannaeyjar Airport\",\n                \"city\": \"Vestmannaeyjar\",\n                \"country\": \"Iceland\",\n                \"iata\": \"VEY\",\n                \"icao\": \"BIVM\",\n                \"latitude\": \"63.424301\",\n                \"longitude\": \"-20.2789\",\n                \"altitude\": 326,\n                \"timezone\": \"Atlantic/Reykjavik\"\n            }\n        },\n        {\n            \"id\": \"YAM\",\n            \"type\": \"airport\",\n            \"attributes\": {\n                \"name\": \"Sault Ste Marie Airport\",\n                \"city\": \"Sault Sainte Marie\",\n                \"country\": \"Canada\",\n                \"iata\": \"YAM\",\n                \"icao\": \"CYAM\",\n                \"latitude\": \"46.485001\",\n                \"longitude\": \"-84.509399\",\n                \"altitude\": 630,\n                \"timezone\": \"America/Toronto\"\n            }\n        },\n        {\n            \"id\": \"YAY\",\n            \"type\": \"airport\",\n            \"attributes\": {\n                \"name\": \"St. Anthony Airport\",\n                \"city\": \"St. Anthony\",\n                \"country\": \"Canada\",\n                \"iata\": \"YAY\",\n                \"icao\": \"CYAY\",\n                \"latitude\": \"51.391899\",\n                \"longitude\": \"-56.083099\",\n                \"altitude\": 108,\n                \"timezone\": \"America/St_Johns\"\n            }\n        },\n        {\n            \"id\": \"YAZ\",\n            \"type\": \"airport\",\n            \"attributes\": {\n                \"name\": \"Tofino / Long Beach Airport\",\n                \"city\": \"Tofino\",\n                \"country\": \"Canada\",\n                \"iata\": \"YAZ\",\n                \"icao\": \"CYAZ\",\n                \"latitude\": \"49.079833\",\n                \"longitude\": \"-125.775583\",\n                \"altitude\": 80,\n                \"timezone\": \"America/Vancouver\"\n            }\n        },\n        {\n            \"id\": \"YBB\",\n            \"type\": \"airport\",\n            \"attributes\": {\n                \"name\": \"Kugaaruk Airport\",\n                \"city\": \"Pelly Bay\",\n                \"country\": \"Canada\",\n                \"iata\": \"YBB\",\n                \"icao\": \"CYBB\",\n                \"latitude\": \"68.534401\",\n                \"longitude\": \"-89.808098\",\n                \"altitude\": 56,\n                \"timezone\": \"America/Edmonton\"\n            }\n        },\n        {\n            \"id\": \"YBC\",\n            \"type\": \"airport\",\n            \"attributes\": {\n                \"name\": \"Baie Comeau Airport\",\n                \"city\": \"Baie Comeau\",\n                \"country\": \"Canada\",\n                \"iata\": \"YBC\",\n                \"icao\": \"CYBC\",\n                \"latitude\": \"49.1325\",\n                \"longitude\": \"-68.204399\",\n                \"altitude\": 71,\n                \"timezone\": \"America/Toronto\"\n            }\n        },\n        {\n            \"id\": \"YBG\",\n            \"type\": \"airport\",\n            \"attributes\": {\n                \"name\": \"CFB Bagotville\",\n                \"city\": \"Bagotville\",\n                \"country\": \"Canada\",\n                \"iata\": \"YBG\",\n                \"icao\": \"CYBG\",\n                \"latitude\": \"48.330601\",\n                \"longitude\": \"-70.996399\",\n                \"altitude\": 522,\n                \"timezone\": \"America/Toronto\"\n            }\n        },\n        {\n            \"id\": \"YBK\",\n            \"type\": \"airport\",\n            \"attributes\": {\n                \"name\": \"Baker Lake Airport\",\n                \"city\": \"Baker Lake\",\n                \"country\": \"Canada\",\n                \"iata\": \"YBK\",\n                \"icao\": \"CYBK\",\n                \"latitude\": \"64.298897\",\n                \"longitude\": \"-96.077797\",\n                \"altitude\": 59,\n                \"timezone\": \"America/Winnipeg\"\n            }\n        },\n        {\n            \"id\": \"YBL\",\n            \"type\": \"airport\",\n            \"attributes\": {\n                \"name\": \"Campbell River Airport\",\n                \"city\": \"Campbell River\",\n                \"country\": \"Canada\",\n                \"iata\": \"YBL\",\n                \"icao\": \"CYBL\",\n                \"latitude\": \"49.950802\",\n                \"longitude\": \"-125.271004\",\n                \"altitude\": 346,\n                \"timezone\": \"America/Vancouver\"\n            }\n        },\n        {\n            \"id\": \"YBR\",\n            \"type\": \"airport\",\n            \"attributes\": {\n                \"name\": \"Brandon Municipal Airport\",\n                \"city\": \"Brandon\",\n                \"country\": \"Canada\",\n                \"iata\": \"YBR\",\n                \"icao\": \"CYBR\",\n                \"latitude\": \"49.91\",\n                \"longitude\": \"-99.951897\",\n                \"altitude\": 1343,\n                \"timezone\": \"America/Winnipeg\"\n            }\n        },\n        {\n            \"id\": \"YCB\",\n            \"type\": \"airport\",\n            \"attributes\": {\n                \"name\": \"Cambridge Bay Airport\",\n                \"city\": \"Cambridge Bay\",\n                \"country\": \"Canada\",\n                \"iata\": \"YCB\",\n                \"icao\": \"CYCB\",\n                \"latitude\": \"69.108101\",\n                \"longitude\": \"-105.138\",\n                \"altitude\": 90,\n                \"timezone\": \"America/Edmonton\"\n            }\n        }\n    ],\n    \"links\": {\n        \"first\": \"https://airportgap.dev-tester.com/api/airports\",\n        \"self\": \"https://airportgap.dev-tester.com/api/airports\",\n        \"last\": \"https://airportgap.dev-tester.com/api/airports?page=203\",\n        \"prev\": \"https://airportgap.dev-tester.com/api/airports\",\n        \"next\": \"https://airportgap.dev-tester.com/api/airports?page=2\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Airport ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let jsonData = pm.response.json();\r",
+									"\r",
+									"pm.test(\"ID is GKA\", function () {\r",
+									"    pm.expect(jsonData.data.id).to.eql(\"GKA\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Type is Airport\", function () {\r",
+									"    pm.expect(jsonData.data.type).to.eql(\"airport\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Attribute is for GKA\", function () {\r",
+									"    pm.expect(jsonData.data.attributes.name).to.eql(\"Goroka Airport\");\r",
+									"    pm.expect(jsonData.data.attributes.country).to.eql(\"Papua New Guinea\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://airportgap.dev-tester.com/api/airports/GKA",
+							"protocol": "https",
+							"host": [
+								"airportgap",
+								"dev-tester",
+								"com"
+							],
+							"path": [
+								"api",
+								"airports",
+								"GKA"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Airport ID",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://airportgap.dev-tester.com/api/airports/GKA",
+									"protocol": "https",
+									"host": [
+										"airportgap",
+										"dev-tester",
+										"com"
+									],
+									"path": [
+										"api",
+										"airports",
+										"GKA"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 03 Oct 2023 03:14:25 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "x-frame-options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "0"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "x-download-options",
+									"value": "noopen"
+								},
+								{
+									"key": "x-permitted-cross-domain-policies",
+									"value": "none"
+								},
+								{
+									"key": "referrer-policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"46489c596210f9ce072fcaff735d1ed1\""
+								},
+								{
+									"key": "Cache-Control",
+									"value": "max-age=0, private, must-revalidate"
+								},
+								{
+									"key": "x-request-id",
+									"value": "c64b5fa3-0512-4a4d-ad92-b3fcefee8cc3"
+								},
+								{
+									"key": "x-runtime",
+									"value": "0.005762"
+								},
+								{
+									"key": "vary",
+									"value": "Accept, Origin"
+								},
+								{
+									"key": "strict-transport-security",
+									"value": "max-age=15724800; includeSubdomains"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Report-To",
+									"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=SHg6hdWAke5R9q28e3v4jw2ul91WG8G%2BszS0g%2BDZ8RkpoGFxpXVy3nIHvdS9ZSn8h%2BEQ0Ccp0AAP8fcsHFX3r%2F4nvBja0MsGTEAt6dDL%2Fcoo1O4xHFcJJYrMZSHWNE7b9iEWeGI4%2B69mjZdg\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "NEL",
+									"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "CF-RAY",
+									"value": "810203ce58303f94-SIN"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								},
+								{
+									"key": "alt-svc",
+									"value": "h3=\":443\"; ma=86400"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": \"GKA\",\n        \"type\": \"airport\",\n        \"attributes\": {\n            \"name\": \"Goroka Airport\",\n            \"city\": \"Goroka\",\n            \"country\": \"Papua New Guinea\",\n            \"iata\": \"GKA\",\n            \"icao\": \"AYGA\",\n            \"latitude\": \"-6.08169\",\n            \"longitude\": \"145.391998\",\n            \"altitude\": 5282,\n            \"timezone\": \"Pacific/Port_Moresby\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Airport Distance",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let jsonData = pm.response.json();\r",
+									"let keys = Object.keys(jsonData.data.attributes);\r",
+									"\r",
+									"pm.test(\"Distance is KIX-NRT\", function () {\r",
+									"    pm.expect(jsonData.data.id).to.eql(\"KIX-NRT\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Distance appear\", function () {\r",
+									"    pm.expect(keys).contain(\"kilometers\");\r",
+									"    pm.expect(keys).contain(\"miles\");\r",
+									"    pm.expect(keys).contain(\"nautical_miles\");\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://airportgap.dev-tester.com/api/airports/distance?from=KIX&to=NRT",
+							"protocol": "https",
+							"host": [
+								"airportgap",
+								"dev-tester",
+								"com"
+							],
+							"path": [
+								"api",
+								"airports",
+								"distance"
+							],
+							"query": [
+								{
+									"key": "from",
+									"value": "KIX"
+								},
+								{
+									"key": "to",
+									"value": "NRT"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Airport Distance",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "https://airportgap.dev-tester.com/api/airports/distance?from=KIX&to=NRT",
+									"protocol": "https",
+									"host": [
+										"airportgap",
+										"dev-tester",
+										"com"
+									],
+									"path": [
+										"api",
+										"airports",
+										"distance"
+									],
+									"query": [
+										{
+											"key": "from",
+											"value": "KIX"
+										},
+										{
+											"key": "to",
+											"value": "NRT"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 03 Oct 2023 03:14:31 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "x-frame-options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "0"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "x-download-options",
+									"value": "noopen"
+								},
+								{
+									"key": "x-permitted-cross-domain-policies",
+									"value": "none"
+								},
+								{
+									"key": "referrer-policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"6f521c10cde5a4f31b91161190b0bbec\""
+								},
+								{
+									"key": "Cache-Control",
+									"value": "max-age=0, private, must-revalidate"
+								},
+								{
+									"key": "x-request-id",
+									"value": "b0daefa1-19db-467b-bbd2-20523d0583f9"
+								},
+								{
+									"key": "x-runtime",
+									"value": "0.016263"
+								},
+								{
+									"key": "vary",
+									"value": "Accept, Origin"
+								},
+								{
+									"key": "strict-transport-security",
+									"value": "max-age=15724800; includeSubdomains"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Report-To",
+									"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=VRqTLtMntcRxLl4gYYaYuP9LYDqPIwNNQeq0o%2BhTKDb4MgeF1DcoN9xrSwaYTKKtRYn%2BlZrRJNgtXeoOn56QTFAPJBPUKF54PX4iniL%2BPAX8GcwkRCPZr%2FdqHFl5jMkvWqLFnTlD0g3C68Cx\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "NEL",
+									"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "CF-RAY",
+									"value": "810203effa003f94-SIN"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								},
+								{
+									"key": "alt-svc",
+									"value": "h3=\":443\"; ma=86400"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": \"KIX-NRT\",\n        \"type\": \"airport_distance\",\n        \"attributes\": {\n            \"from_airport\": {\n                \"id\": 3158,\n                \"name\": \"Kansai International Airport\",\n                \"city\": \"Osaka\",\n                \"country\": \"Japan\",\n                \"iata\": \"KIX\",\n                \"icao\": \"RJBB\",\n                \"latitude\": \"34.427299\",\n                \"longitude\": \"135.244003\",\n                \"altitude\": 26,\n                \"timezone\": \"Asia/Tokyo\"\n            },\n            \"to_airport\": {\n                \"id\": 1721,\n                \"name\": \"Narita International Airport\",\n                \"city\": \"Tokyo\",\n                \"country\": \"Japan\",\n                \"iata\": \"NRT\",\n                \"icao\": \"RJAA\",\n                \"latitude\": \"35.764702\",\n                \"longitude\": \"140.386002\",\n                \"altitude\": 141,\n                \"timezone\": \"Asia/Tokyo\"\n            },\n            \"kilometers\": 490.8053652969214,\n            \"miles\": 304.76001022047103,\n            \"nautical_miles\": 264.82908133654655\n        }\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Airports-Favorites",
+			"item": [
+				{
+					"name": "Favorites",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let jsonData = pm.response.json();\r",
+									"let keys = Object.keys(jsonData);\r",
+									"\r",
+									"pm.test(\"Response contains body\", function () {\r",
+									"    pm.response.to.have.body();\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Body contains data keys\", function () {\r",
+									"    pm.expect(keys).contain(\"data\")\r",
+									"});\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://airportgap.dev-tester.com/api/favorites",
+							"protocol": "https",
+							"host": [
+								"airportgap",
+								"dev-tester",
+								"com"
+							],
+							"path": [
+								"api",
+								"favorites"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Favorites",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Token {{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://airportgap.dev-tester.com/api/favorites",
+									"protocol": "https",
+									"host": [
+										"airportgap",
+										"dev-tester",
+										"com"
+									],
+									"path": [
+										"api",
+										"favorites"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 03 Oct 2023 03:13:28 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "x-frame-options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "0"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "x-download-options",
+									"value": "noopen"
+								},
+								{
+									"key": "x-permitted-cross-domain-policies",
+									"value": "none"
+								},
+								{
+									"key": "referrer-policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"800cbfcf9e9c412dede49dab1c683f2f\""
+								},
+								{
+									"key": "Cache-Control",
+									"value": "max-age=0, private, must-revalidate"
+								},
+								{
+									"key": "x-request-id",
+									"value": "da2d9d6f-e281-49af-9a96-f722a825e79d"
+								},
+								{
+									"key": "x-runtime",
+									"value": "0.017623"
+								},
+								{
+									"key": "vary",
+									"value": "Accept, Origin"
+								},
+								{
+									"key": "strict-transport-security",
+									"value": "max-age=15724800; includeSubdomains"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Report-To",
+									"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=km2EFCt0ySe3rfOZ79DfUdW%2B5AvTbrJruGVlovOKUxUpB4mhQ04w3dr8%2Bve5T4%2FZJ8roOVwJF9bInw%2FWmnUJbEtl6aS7dYvSdWoIhrnzVVjQ%2B4nF3szlzpyakKNujVPoCphmrf8Y4s4I2%2BQR\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "NEL",
+									"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "CF-RAY",
+									"value": "810202623a473f94-SIN"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								},
+								{
+									"key": "alt-svc",
+									"value": "h3=\":443\"; ma=86400"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": \"12561\",\n            \"type\": \"favorite\",\n            \"attributes\": {\n                \"airport\": {\n                    \"id\": 1721,\n                    \"name\": \"Narita International Airport\",\n                    \"city\": \"Tokyo\",\n                    \"country\": \"Japan\",\n                    \"iata\": \"NRT\",\n                    \"icao\": \"RJAA\",\n                    \"latitude\": \"35.764702\",\n                    \"longitude\": \"140.386002\",\n                    \"altitude\": 141,\n                    \"timezone\": \"Asia/Tokyo\"\n                },\n                \"note\": \"Added on 2023-10-03T03:13:18.277Z\"\n            }\n        }\n    ],\n    \"links\": {\n        \"first\": \"https://airportgap.dev-tester.com/api/favorites\",\n        \"self\": \"https://airportgap.dev-tester.com/api/favorites\",\n        \"last\": \"https://airportgap.dev-tester.com/api/favorites?page=1\",\n        \"prev\": \"https://airportgap.dev-tester.com/api/favorites\",\n        \"next\": \"https://airportgap.dev-tester.com/api/favorites\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Add Favorites",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let jsonData = pm.response.json();\r",
+									"postman.setEnvironmentVariable(\"favid\", jsonData.data.id);\r",
+									"\r",
+									"pm.test(\"type is favorite\", function () {\r",
+									"    pm.expect(jsonData.data.type).to.equal(\"favorite\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"airport name is Narita International Airport\", function () {\r",
+									"    pm.expect(jsonData.data.attributes.airport.name).to.equal(\"Narita International Airport\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"airport ID is NRT\", function () {\r",
+									"    pm.expect(jsonData.data.attributes.airport.iata).to.equal(\"NRT\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://airportgap.dev-tester.com/api/favorites?airport_id=NRT&note=Added on {{$isoTimestamp}}",
+							"protocol": "https",
+							"host": [
+								"airportgap",
+								"dev-tester",
+								"com"
+							],
+							"path": [
+								"api",
+								"favorites"
+							],
+							"query": [
+								{
+									"key": "airport_id",
+									"value": "NRT"
+								},
+								{
+									"key": "note",
+									"value": "Added on {{$isoTimestamp}}"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Add Favorites",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Token {{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://airportgap.dev-tester.com/api/favorites?airport_id=NRT&note=Added on {{$isoTimestamp}}",
+									"protocol": "https",
+									"host": [
+										"airportgap",
+										"dev-tester",
+										"com"
+									],
+									"path": [
+										"api",
+										"favorites"
+									],
+									"query": [
+										{
+											"key": "airport_id",
+											"value": "NRT"
+										},
+										{
+											"key": "note",
+											"value": "Added on {{$isoTimestamp}}"
+										}
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 03 Oct 2023 03:13:18 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "306"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "x-frame-options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "0"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "x-download-options",
+									"value": "noopen"
+								},
+								{
+									"key": "x-permitted-cross-domain-policies",
+									"value": "none"
+								},
+								{
+									"key": "referrer-policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"d709f8c44636ca03def401a57df9955b\""
+								},
+								{
+									"key": "Cache-Control",
+									"value": "max-age=0, private, must-revalidate"
+								},
+								{
+									"key": "x-request-id",
+									"value": "78a42870-3e76-4b1f-a878-f92cc2a3d3c2"
+								},
+								{
+									"key": "x-runtime",
+									"value": "0.024984"
+								},
+								{
+									"key": "vary",
+									"value": "Accept, Origin"
+								},
+								{
+									"key": "strict-transport-security",
+									"value": "max-age=15724800; includeSubdomains"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Report-To",
+									"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=sPoiFkqZMebmscxCriEH7yVlrPoKbF58ro2bvhIm5HuEMg%2FUMyHjErsStnNWEOdE2JahHc7Qpjr0l%2FdKl5maA%2FPbJyLKMyAjiOs%2FEsInwe4sNrmEzDI1g5SxyxJhLpsUMg%2BBmlJZKbeHh0jG\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "NEL",
+									"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "CF-RAY",
+									"value": "8102022969d93f94-SIN"
+								},
+								{
+									"key": "alt-svc",
+									"value": "h3=\":443\"; ma=86400"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": \"12561\",\n        \"type\": \"favorite\",\n        \"attributes\": {\n            \"airport\": {\n                \"id\": 1721,\n                \"name\": \"Narita International Airport\",\n                \"city\": \"Tokyo\",\n                \"country\": \"Japan\",\n                \"iata\": \"NRT\",\n                \"icao\": \"RJAA\",\n                \"latitude\": \"35.764702\",\n                \"longitude\": \"140.386002\",\n                \"altitude\": 141,\n                \"timezone\": \"Asia/Tokyo\"\n            },\n            \"note\": \"Added on 2023-10-03T03:13:18.277Z\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Favorites ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let jsonData = pm.response.json();\r",
+									"\r",
+									"pm.test(\"Fav id is valid\", function () {\r",
+									"    let favid = pm.variables.get(\"favid\");\r",
+									"    pm.expect(jsonData.data.id).to.eql(favid);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token Kfj1U67PyQgfWtCY7ramVMrB",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://airportgap.dev-tester.com/api/favorites/{{favid}}",
+							"protocol": "https",
+							"host": [
+								"airportgap",
+								"dev-tester",
+								"com"
+							],
+							"path": [
+								"api",
+								"favorites",
+								"{{favid}}"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "4",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Favorites ID",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Token Kfj1U67PyQgfWtCY7ramVMrB",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://airportgap.dev-tester.com/api/favorites/{{favid}}",
+									"protocol": "https",
+									"host": [
+										"airportgap",
+										"dev-tester",
+										"com"
+									],
+									"path": [
+										"api",
+										"favorites",
+										"{{favid}}"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "4",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 03 Oct 2023 03:13:41 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "x-frame-options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "0"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "x-download-options",
+									"value": "noopen"
+								},
+								{
+									"key": "x-permitted-cross-domain-policies",
+									"value": "none"
+								},
+								{
+									"key": "referrer-policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"d709f8c44636ca03def401a57df9955b\""
+								},
+								{
+									"key": "Cache-Control",
+									"value": "max-age=0, private, must-revalidate"
+								},
+								{
+									"key": "x-request-id",
+									"value": "963d481e-14c8-4a8e-a496-91c5140e9005"
+								},
+								{
+									"key": "x-runtime",
+									"value": "0.048401"
+								},
+								{
+									"key": "vary",
+									"value": "Accept, Origin"
+								},
+								{
+									"key": "strict-transport-security",
+									"value": "max-age=15724800; includeSubdomains"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Report-To",
+									"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=evGwzbs3U1TcBXHAgwP%2BUcxSLPn4bhhUWIF2X3%2BVHcyLHhQgscNntYz%2Bfa98bBv8xUNeIJ%2BuNybK2sp8z1gOwxHkAFuPXkqn2KMuOfj3SRsUz7QyUFERNXDLzvdpACthLOgz5gHOg02EhWUs\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "NEL",
+									"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "CF-RAY",
+									"value": "810202b8a8ca3f94-SIN"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								},
+								{
+									"key": "alt-svc",
+									"value": "h3=\":443\"; ma=86400"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": \"12561\",\n        \"type\": \"favorite\",\n        \"attributes\": {\n            \"airport\": {\n                \"id\": 1721,\n                \"name\": \"Narita International Airport\",\n                \"city\": \"Tokyo\",\n                \"country\": \"Japan\",\n                \"iata\": \"NRT\",\n                \"icao\": \"RJAA\",\n                \"latitude\": \"35.764702\",\n                \"longitude\": \"140.386002\",\n                \"altitude\": 141,\n                \"timezone\": \"Asia/Tokyo\"\n            },\n            \"note\": \"Added on 2023-10-03T03:13:18.277Z\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Favorites",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 204\", function () {\r",
+									"    pm.response.to.have.status(204);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://airportgap.dev-tester.com/api/favorites/{{favid}}",
+							"protocol": "https",
+							"host": [
+								"airportgap",
+								"dev-tester",
+								"com"
+							],
+							"path": [
+								"api",
+								"favorites",
+								"{{favid}}"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "NRT",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete Favorites",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Token {{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://airportgap.dev-tester.com/api/favorites/{{favid}}",
+									"protocol": "https",
+									"host": [
+										"airportgap",
+										"dev-tester",
+										"com"
+									],
+									"path": [
+										"api",
+										"favorites",
+										"{{favid}}"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "NRT",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 03 Oct 2023 03:13:48 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "x-frame-options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "0"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "x-download-options",
+									"value": "noopen"
+								},
+								{
+									"key": "x-permitted-cross-domain-policies",
+									"value": "none"
+								},
+								{
+									"key": "referrer-policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache"
+								},
+								{
+									"key": "x-request-id",
+									"value": "81216855-2fc7-4f12-a75d-5c92e158f25f"
+								},
+								{
+									"key": "x-runtime",
+									"value": "0.021666"
+								},
+								{
+									"key": "vary",
+									"value": "Origin"
+								},
+								{
+									"key": "strict-transport-security",
+									"value": "max-age=15724800; includeSubdomains"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Report-To",
+									"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=m%2FCvmRG%2FYHj%2BM3W%2FnulK%2Blhat8ayXnU7T9EU9npfrGDui08eQGYQ8F4LHxE3Rs9wJMTR6ClaBtqvcChaH4eLgLFCVappY8upunvOrQioeWsWEDHB8PXU6moz%2FmecwGkSxn9GCAaEuEDN09xY\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "NEL",
+									"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "CF-RAY",
+									"value": "810202e58bb43f94-SIN"
+								},
+								{
+									"key": "alt-svc",
+									"value": "h3=\":443\"; ma=86400"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "token",
+			"value": "1"
+		}
+	]
+}
