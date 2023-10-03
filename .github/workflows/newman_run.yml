@@ -43,7 +43,7 @@ jobs:
       # Run Collection
       - name: Run Collection
         run: |
-          newman run "Collection/Airports.postman_collections.json" -r htmlextra --reporter-htmlextra-export ReportFolder/report.html
+          newman run "Collection/Airports.postman_collection.json" -r htmlextra --reporter-htmlextra-export ReportFolder/report.html
 
       # Publish the Report
       - name: Publsh Report
